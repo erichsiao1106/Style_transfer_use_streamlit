@@ -1,10 +1,6 @@
-opencv-contrib-python==4.5.3.56
-opencv-python==4.5.3.56
-matplotlib
-keras
-tensorflow
-numpy
+streamlit == 0.69.1
+streamlit-drawable-canvas
+opencv-python
 pandas
-streamlit
-opencv-python-headless
-Pillow
+shapely
+scipy
