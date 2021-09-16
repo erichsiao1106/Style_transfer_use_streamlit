@@ -1,3 +1,4 @@
+import cv2
 import streamlit as st
 
 cap = cv2.VideoCapture(0)
