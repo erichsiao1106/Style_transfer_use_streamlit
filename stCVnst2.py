@@ -4,7 +4,7 @@ models = ["la_muse.t7","the_scream.t7","composition_vii.t7","starry_night.t7","l
           ,"udnie.t7","mosaic.t7","candy.t7","feathers.t7","the_wave.t7"]
 outs=[]
 nets = []
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(-1)
 st.title('Eric Hsiao webapp')
 run = st.checkbox('Run')
 FRAME_WINDOW = st.image([])
