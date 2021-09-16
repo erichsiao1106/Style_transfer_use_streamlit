@@ -2,6 +2,7 @@ import streamlit as st
 import cv2 as cv
 import tempfile
 import cv2
+st.title('Eric Hsiao webapp')
 models = ["la_muse.t7", "the_scream.t7", "composition_vii.t7", "starry_night.t7",
           "la_muse_eccv16.t7", "udnie.t7", "mosaic.t7", "candy.t7", "feathers.t7", "the_wave.t7"]
 source_name = st.sidebar.selectbox(
