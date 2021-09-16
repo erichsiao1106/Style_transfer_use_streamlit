@@ -1,24 +1,22 @@
-import cv2
-import streamlit as st
-
-
 import streamlit as st
 import cv2 as cv
 import tempfile
 
 f = st.file_uploader("Upload file")
-tfile = tempfile.NamedTemporaryFile(delete=False)
+
+tfile = tempfile.NamedTemporaryFile(delete=False) 
 tfile.write(f.read())
+
+
 vf = cv.VideoCapture(tfile.name)
 
+stframe = st.empty()
 
-
-cap = cv2.VideoCapture(0)
-st.title('Streamlit + CV2')
-run = st.checkbox('請打勾來執行')
-FRAME_WINDOW = st.image([])
-while run:
-    success, frame = cap.read()
-    FRAME_WINDOW.image(frame, channels= 'BGR')
-
-cap.release()
+while vf.isOpened():
+    ret, frame = vf.read()
+    # if frame is read correctly ret is True
+    if not ret:
+        print("Can't receive frame (stream end?). Exiting ...")
+        break
+    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    stframe.image(gray)
